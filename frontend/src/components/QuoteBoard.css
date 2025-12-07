@@ -1,0 +1,174 @@
+.quote-board-modal {
+    background: var(--light-cream);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    animation: slideIn var(--transition-normal) ease-out;
+}
+
+.quote-board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--cream);
+}
+
+.quote-board-header h2 {
+    color: var(--vintage-brown);
+    margin: 0;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--warm-brown);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-btn:hover {
+    background: var(--cream);
+    color: var(--vintage-brown);
+    transform: rotate(90deg);
+}
+
+.listing-summary {
+    background: var(--cream);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid var(--vintage-brown);
+}
+
+.listing-summary h3 {
+    color: var(--vintage-brown);
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.listing-summary p {
+    margin: 0;
+    color: var(--dark-brown);
+    font-weight: 600;
+}
+
+.offers-table {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.table-header,
+.table-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 150px 100px 120px 220px;
+    gap: var(--spacing-sm);
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+}
+
+.table-header {
+    background: var(--vintage-brown);
+    color: var(--cream);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.table-row {
+    background: var(--cream);
+    transition: all var(--transition-fast);
+}
+
+.table-row:hover {
+    background: var(--light-cream);
+    transform: translateX(5px);
+}
+
+.table-row.highest {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+    border: 2px solid var(--gold);
+    font-weight: 600;
+}
+
+.rank {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 700;
+    color: var(--vintage-brown);
+}
+
+.crown {
+    font-size: 1.25rem;
+}
+
+.offer-amount {
+    font-weight: 700;
+    color: var(--vintage-brown);
+    font-family: var(--font-heading);
+}
+
+.percentage {
+    font-weight: 600;
+    color: var(--warm-brown);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .quote-board-modal {
+        padding: var(--spacing-md);
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        padding: var(--spacing-md);
+    }
+
+    .table-row>span {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table-row>span::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--warm-brown);
+    }
+}
